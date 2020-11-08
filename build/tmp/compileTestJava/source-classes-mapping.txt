@@ -1,0 +1,2 @@
+com/greenfox/sideproject/SideprojectApplicationTests.java
+ com.greenfox.sideproject.SideprojectApplicationTests

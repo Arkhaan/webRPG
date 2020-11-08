@@ -1,0 +1,60 @@
+body {
+    background-image: url('background.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+nav {
+    margin: auto;
+    height: 50px;
+    /*border: 2px solid black;*/
+}
+
+#main-page {
+    width: 90%;
+    height: 600px;
+    margin-top: 50px;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    /*border: 2px solid black;*/
+}
+
+#stats {
+    width: 150px;
+    height: 50%;
+    margin: 20px;
+    /*border: 2px solid black;*/
+}
+
+#center {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 20px;
+}
+
+#description {
+    height: 40%;
+    /*border: 2px solid black;*/
+}
+
+#choices {
+    height: 50%;
+    /*border: 2px solid black;*/
+    margin-top: 10px;
+}
+
+#separator-middle {
+    margin: auto;
+    width: 567px;
+    height: 38px;
+}
+
+#separator-left {
+    margin-top: 20px;
+    width: 30px;
+    height: 50%;
+}
+
