@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/styles-navbar.css" />
 </head>
 <body>
 
-<nav>NAVBAR</nav>
+<div th:replace="~{fragments/topnav}">
+</div>
 
 <div id="main-page">
-    <div id="stats">STATS</div>
-    <img src="decorative-clipart-grey-16.png" alt="" id="separator-left">
-    <div id="center">
-        <div id="description">TEXT</div>
-        <img src="clipart-arrow-decorative-8-transparent.png" alt="" id="separator-middle">
-        <div id="choices">CHOICES</div>
-    </div>
+    <p>Choose your tale</p>
+    <ul th:each="tale: ${tales}">
+        <li>
+            <a th:href="@{load-adventure(id = ${tale.id})}" th:text="${tale.title}"></a>
+        </li>
+    </ul>
 </div>
 
 

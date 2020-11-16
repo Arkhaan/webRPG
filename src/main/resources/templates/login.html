@@ -1,11 +1,18 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="/styles-login.css" />
+    <link rel="stylesheet" href="/styles-navbar.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body>
+
+<div th:replace="~{fragments/topnav}">
+</div>
 
 <div id="sign-up-window">
     <div id="sign-up-form">
@@ -13,13 +20,16 @@
 
             <p id="form-title">Log in</p>
 
-            <input type="text" id="name" name="username" placeholder="Username" required>
+            <input type="text" id="name" name="login" placeholder="Login" required>
             <input type="password" id="password" name="password" placeholder="Password">
 
             <button id="form-button">GO!</button>
 
         </form>
-        <p>Not registered yet? <a href="/create-account">Click here to create your account</a></p>
+        <p th:if="${loginFailed}">Username or password incorrect!</p>
+        <p th:unless="${registrationSuccess}">Not registered yet? <a href="/create-account">Click here to create your account</a></p>
+        <p th:if="${registrationSuccess}">Registration successful! Welcome!</a></p>
+        <p th:if="${logoutSuccess}">Logout successful!</a></p>
     </div>
 </div>
 

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new account</title>
+    <link rel="stylesheet" href="/styles-login.css" />
+    <link rel="stylesheet" href="/styles-navbar.css" />
+</head>
+<body>
+
+<div th:replace="~{fragments/topnav}">
+</div>
+
+<div id="sign-up-window">
+    <div id="sign-up-form">
+        <form action="/create-account" method="post">
+
+            <p id="form-title">Create new account</p>
+
+            <input type="text" id="name" name="login" placeholder="Username" maxlength="50" required>
+            <input type="password" id="password" name="password" placeholder="Password" onkeyup='check()' required>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Retype password" onkeyup='check()' required>
+            <span id='message'></span>
+
+            <button type="submit" id="form-button">SIGN ME UP</button>
+
+        </form>
+        <p th:if="${registrationFail}">User already exists!</p>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    function check() {
+        if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'matching';
+            document.getElementById("form-button").disabled = false;
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'not matching';
+            document.getElementById("form-button").disabled = true;
+        }
+    }
+
+</script>
+
+
+
+
+
+</body>
+</html>

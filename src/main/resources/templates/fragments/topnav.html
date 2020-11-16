@@ -1,0 +1,10 @@
+<div th:fragment="navbar">
+    <div id="title">
+        <h1>Lost Tales</h1>
+    </div>
+    <nav>
+        <a th:unless="${apiKey} == null" href="/logout">
+            <img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-10-1/1024/logout10-512.png" alt="logout">
+        </a>
+    </nav>
+</div>
