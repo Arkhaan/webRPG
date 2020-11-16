@@ -1,7 +1,7 @@
 com/greenfox/sideproject/services/UserService.java
  com.greenfox.sideproject.services.UserService
-com/greenfox/sideproject/controllers/PlayerController.java
- com.greenfox.sideproject.controllers.PlayerController
+com/greenfox/sideproject/models/User.java
+ com.greenfox.sideproject.models.User
 com/greenfox/sideproject/models/dtos/UserResponseDTO.java
  com.greenfox.sideproject.models.dtos.UserResponseDTO
 com/greenfox/sideproject/SideprojectApplication.java
@@ -10,5 +10,5 @@ com/greenfox/sideproject/repositories/UserRepository.java
  com.greenfox.sideproject.repositories.UserRepository
 com/greenfox/sideproject/services/UserServiceImpl.java
  com.greenfox.sideproject.services.UserServiceImpl
-com/greenfox/sideproject/models/User.java
- com.greenfox.sideproject.models.User
+com/greenfox/sideproject/controllers/PlayerController.java
+ com.greenfox.sideproject.controllers.PlayerController

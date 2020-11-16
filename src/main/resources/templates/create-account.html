@@ -6,6 +6,8 @@
     <title>Create new account</title>
     <link rel="stylesheet" href="/styles-login.css" />
     <link rel="stylesheet" href="/styles-navbar.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -27,7 +29,11 @@
 
         </form>
         <p th:if="${registrationFail}">User already exists!</p>
+        <a href="/login">Back</a>
     </div>
+
+
+
 </div>
 
 

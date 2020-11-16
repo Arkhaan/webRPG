@@ -67,7 +67,7 @@ public class PlayerController {
         userService.logout(model.getAttribute("apiKey").toString());
         status.setComplete();
         model.addAttribute("logoutSuccess", true);
-        return "login";
+        return "redirect:/login";
     }
 
 }
