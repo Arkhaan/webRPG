@@ -3,8 +3,10 @@
         <h1>Lost Tales</h1>
     </div>
     <nav>
+        <a th:if="${user_id eq 1}" href="/panel-administration">Panel Administration</a>
+        <a href="/">Home</a>
         <a th:unless="${apiKey} == null" href="/logout">
-            <img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-10-1/1024/logout10-512.png" alt="logout">
+            <img src="https://cdn2.iconfinder.com/data/icons/e-commerce-line-10-1/1024/logout10-512.png" alt="logout" title="logout">
         </a>
     </nav>
 </div>

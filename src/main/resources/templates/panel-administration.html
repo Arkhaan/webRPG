@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel administration</title>
+    <link rel="stylesheet" href="/panel-admin.css" />
+    <link rel="stylesheet" href="/styles-navbar.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{fragments/topnav}">
+</div>
+
+<a href="/">Back</a>
+
+<form action="/create-panel" method="post">
+
+    <p class="form-title">Create new panel</p>
+
+    <textarea name="panelText" placeholder="Write here the main text..." rows="10" cols="100" required></textarea>
+    <label for="taleId" id="taleIdLabel">Choose which tale:</label>
+    <select name="taleId" id="taleId" required>
+        <option th:each="tale : ${tales}"
+                th:value="${tale.id}" th:text="${tale.title}"></option>
+    </select>
+
+
+    <button type="submit" class="form-button">Create new panel</button>
+
+</form>
+
+<form action="/update-panel" method="post">
+
+    <p class="form-title">Update panel</p>
+
+    <label for="panelId" id="panelIdLabel">Choose which panel:</label>
+    <select name="panelId" id="panelId" onchange="getPanelText(this.value)" required>
+        <option value="" selected></option>
+        <option th:each="panelId : ${panelIds}"
+                th:value="${panelId}" th:text="${panelId}"></option>
+    </select>
+
+    <textarea id="panelText" name="panelText" placeholder="Choose a panel id or add your text..." rows="10" cols="100" required></textarea>
+
+    <button type="submit" class="form-button">Update panel</button>
+
+    <br>
+
+    <a href="/">Back</a>
+
+</form>
+
+<script type="text/javascript">
+
+    const panelTextToEdit = document.getElementById('panelText');
+    function getPanelText(str) {
+        let xhttp;
+        if (str == "") {
+            document.getElementById("panelText").innerText = "";
+            return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                document.getElementById("panelText").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "get-panel-text?id="+str, true);
+        xhttp.send();
+    };
+
+</script>
+
+
+</body>
+</html>

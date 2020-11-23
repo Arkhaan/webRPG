@@ -1,7 +1,10 @@
 package com.greenfox.sideproject.services;
 
+import com.greenfox.sideproject.models.Story;
+import com.greenfox.sideproject.models.Tale;
 import com.greenfox.sideproject.models.User;
 import com.greenfox.sideproject.models.dtos.UserResponseDTO;
+import com.greenfox.sideproject.models.dtos.UserStoriesDTO;
 import com.greenfox.sideproject.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,14 +52,25 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void logout(String apikey) {
+    public void logout(String apiKey) {
         // TODO : make boolean and say if logout was successful or not
-        Optional<User> optionalUser = userRepository.findByApiKey(apikey);
+        Optional<User> optionalUser = userRepository.findByApiKey(apiKey);
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setApiKey(null);
             userRepository.save(user);
         }
+    }
+
+    @Override
+    public Long getUserId(String apiKey) {
+        Optional<User> optionalUser = userRepository.findByApiKey(apiKey);
+        return optionalUser.map(User::getId).orElse(null);
+    }
+
+    @Override
+    public User getUser(String apiKey) {
+        return userRepository.findByApiKey(apiKey).get();
     }
 
     public String generateApiKey() {

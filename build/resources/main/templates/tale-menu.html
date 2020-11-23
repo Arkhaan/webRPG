@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/styles-navbar.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{fragments/topnav}">
+</div>
+
+<div id="main-page">
+    <p>Choose your tale</p>
+    <ul id="list-tales">
+        <li th:each="userStory: ${userStories}">
+            <p th:text="${userStory.taleName}" th:onclick="|displayOptions('${userStory.taleId}')|"></p>
+            <div class="adventure-links" hidden>
+                <a class="adventure-link" th:href="@{start-adventure(id = ${userStory.taleId})}">
+                    <img src="corner-clipart-divider-10-transparent.png" alt="" class="left-corner">
+                    Start new adventure
+                    <img src="corner-clipart-divider-10-transparent.png" alt="" class="right-corner">
+                </a>
+                <a th:if="${userStory.inProgress}" class="adventure-link" th:href="@{adventure(taleId = ${userStory.taleId})}">
+                    <img src="corner-clipart-divider-10-transparent.png" alt="" class="left-corner">
+                    Continue the journey
+                    <img src="corner-clipart-divider-10-transparent.png" alt="" class="right-corner">
+                </a>
+            </div>
+
+        </li>
+    </ul>
+</div>
+
+<script>
+    function displayOptions(id) {
+        let elements = document.getElementsByClassName("adventure-links");
+        for (let i = 0; i< elements.length; i++) {
+            elements[i].hidden = true;
+        }
+        document.getElementById("list-tales").children[id-1].children[1].hidden = false;
+    }
+</script>
+
+
+</body>
+</html>

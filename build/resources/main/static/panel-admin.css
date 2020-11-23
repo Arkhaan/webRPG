@@ -1,0 +1,52 @@
+body {
+    background-image: url('background_lowres.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#taleId {
+    width: 250px;
+}
+
+#taleIdLabel {
+    margin-top: 10px;
+}
+
+#panelId {
+    width: 50px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    margin: auto;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid grey;
+    margin-top: 20px;
+}
+
+input:focus {
+    outline: none !important;
+    border-bottom: 3px solid grey;
+}
+
+.form-button {
+    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.form-title {
+    font-size: 30px;
+    margin-bottom: 10px;
+}

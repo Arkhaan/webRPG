@@ -1,5 +1,5 @@
 body {
-    background-image: url('background.jpg');
+    background-image: url('background_lowres.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -12,14 +12,12 @@ body {
     margin-left: 30px;
     display: flex;
     flex-direction: row;
-    border: 2px solid black;
 }
 
 #stats {
     width: 150px;
     height: 50%;
     margin: 20px;
-    border: 2px solid black;
 }
 
 #center {
@@ -31,12 +29,10 @@ body {
 
 #description {
     height: 40%;
-    border: 2px solid black;
 }
 
 #choices {
     height: 50%;
-    border: 2px solid black;
     margin-top: 10px;
 }
 
@@ -50,5 +46,9 @@ body {
     margin-top: 20px;
     width: 30px;
     height: 50%;
+}
+
+pre {
+    white-space: pre-wrap;
 }
 

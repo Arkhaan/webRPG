@@ -18,7 +18,7 @@
     <div id="stats">STATS</div>
     <img src="decorative-clipart-grey-16.png" alt="" id="separator-left">
     <div id="center">
-        <div id="description">TEXT</div>
+        <pre id="description" th:text="${panel.getMainText()}"></pre>
         <img src="clipart-arrow-decorative-8-transparent.png" alt="" id="separator-middle">
         <div id="choices">CHOICES</div>
     </div>

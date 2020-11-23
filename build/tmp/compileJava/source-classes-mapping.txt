@@ -1,14 +1,38 @@
-com/greenfox/sideproject/services/UserService.java
- com.greenfox.sideproject.services.UserService
-com/greenfox/sideproject/models/User.java
- com.greenfox.sideproject.models.User
-com/greenfox/sideproject/models/dtos/UserResponseDTO.java
- com.greenfox.sideproject.models.dtos.UserResponseDTO
-com/greenfox/sideproject/SideprojectApplication.java
- com.greenfox.sideproject.SideprojectApplication
+com/greenfox/sideproject/models/Tale.java
+ com.greenfox.sideproject.models.Tale
+com/greenfox/sideproject/repositories/PanelRepository.java
+ com.greenfox.sideproject.repositories.PanelRepository
+com/greenfox/sideproject/services/PanelServiceImpl.java
+ com.greenfox.sideproject.services.PanelServiceImpl
 com/greenfox/sideproject/repositories/UserRepository.java
  com.greenfox.sideproject.repositories.UserRepository
+com/greenfox/sideproject/SideprojectApplication.java
+ com.greenfox.sideproject.SideprojectApplication
+com/greenfox/sideproject/models/Panel.java
+ com.greenfox.sideproject.models.Panel
+com/greenfox/sideproject/models/Story.java
+ com.greenfox.sideproject.models.Story
+com/greenfox/sideproject/models/UserCharacter.java
+ com.greenfox.sideproject.models.UserCharacter
+com/greenfox/sideproject/repositories/TaleRepository.java
+ com.greenfox.sideproject.repositories.TaleRepository
 com/greenfox/sideproject/services/UserServiceImpl.java
  com.greenfox.sideproject.services.UserServiceImpl
+com/greenfox/sideproject/models/dtos/UserResponseDTO.java
+ com.greenfox.sideproject.models.dtos.UserResponseDTO
+com/greenfox/sideproject/services/PanelService.java
+ com.greenfox.sideproject.services.PanelService
+com/greenfox/sideproject/models/User.java
+ com.greenfox.sideproject.models.User
+com/greenfox/sideproject/services/UserService.java
+ com.greenfox.sideproject.services.UserService
+com/greenfox/sideproject/models/dtos/UserStoriesDTO.java
+ com.greenfox.sideproject.models.dtos.UserStoriesDTO
+com/greenfox/sideproject/services/TaleService.java
+ com.greenfox.sideproject.services.TaleService
+com/greenfox/sideproject/repositories/StoryRepository.java
+ com.greenfox.sideproject.repositories.StoryRepository
+com/greenfox/sideproject/services/TaleServiceImpl.java
+ com.greenfox.sideproject.services.TaleServiceImpl
 com/greenfox/sideproject/controllers/PlayerController.java
  com.greenfox.sideproject.controllers.PlayerController

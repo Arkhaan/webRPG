@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles-adventure.css">
+    <link rel="stylesheet" href="/styles-navbar.css" />
+    <link rel="stylesheet" href="/tale-start.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="~{fragments/topnav}">
+</div>
+
+<div id="main-page">
+    <div id="center">
+        <pre id="description" th:text="${panel.getMainText()}"></pre>
+        <img src="clipart-arrow-decorative-8-transparent.png" alt="" id="separator-middle">
+        <div id="choices">
+            <form th:action="@{/start-adventure(id=${taleId}, panelStart=2)}", method="post" id="form">
+                <div class="form-line">
+                    <label for="name">Choose your name:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+                <div class="form-line">
+                    <label for="gender">Choose your gender:</label>
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-line">
+                    <label for="strength">Choose a value to attribute to your strength:</label>
+                    <input type="number" id="strength" name="strength" min="1" value="1" required>
+                </div>
+                <div class="form-line">
+                    <label for="intelligence">Choose a value to attribute to your intelligence:</label>
+                    <input type="number" id="intelligence" name="intelligence" min="1" value="1" required>
+                </div>
+                <div class="form-line">
+                    <label for="agility">Choose a value to attribute to your agility:</label>
+                    <input type="number" id="agility" name="agility" min="1" value="1" required>
+                </div>
+
+                <button id="submitBtn" class="form-line">Let's go!</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener("change",() => {
+        let values = parseInt(document.getElementById('agility').value) + parseInt(document.getElementById('strength').value) + parseInt(document.getElementById('intelligence').value);
+        document.getElementById('submitBtn').disabled = values !== 9;
+    });
+</script>
+
+
+
+</body>
+</html>
